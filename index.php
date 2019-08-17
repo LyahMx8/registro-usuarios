@@ -1,0 +1,1 @@
+<?php // Siempre desarrolladores, nunca indesarrolladores
