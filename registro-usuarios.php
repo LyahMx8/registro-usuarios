@@ -23,11 +23,11 @@ require plugin_dir_path( __FILE__ ) . 'includes/settings.php';
  *
  * Mantener todos los recursos del plugin via hooks
  *
- * @since    0.0.1
+ * @since    0.1.0
  */
 function run_registro() {
 
-	$plugin = new Settings();
+	$plugin = new RG_Settings();
 	$plugin->run();
 
 }

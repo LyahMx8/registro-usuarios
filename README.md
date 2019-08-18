@@ -7,7 +7,7 @@ Registro de Usuarios, es un plugin que le permitirá recolectar información de 
 1. Descomprima el paquete `registro-usuarios`.
 2. Cargue el anchivo dentro de la carpeta de Wordpress `/wp-content/plugins/`.
 3. Active el plugin dentro del menú del administrador en Wordpress `Plugins`.
-4. Done and Ready.
+4. Finalizado y funcionando.
 
 ### Prerequisos
 
@@ -22,7 +22,7 @@ Usamos [SemVer](http://semver.org/) para el control de versiones. Para ver otras
 
 * **Yimmy Motta** 
 
-## Licensia
+## Licencia
 
 Este proyecto se rige bajo GPLv2 - ver [LICENSE.md](LICENSE.md) para más detalles
 
