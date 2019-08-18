@@ -85,9 +85,9 @@ class RG_Admin{
 			</tr>
 	<?php
 
-		$total_pages_sql = $wpdb->get_var("SELECT COUNT(*) FROM registros_usuarios WHERE cmp_actv_usr = 1");
+		$total_pages_sql = $wpdb->get_var("SELECT COUNT(*) FROM registro_usuarios WHERE rg_actv_usr = 1");
 
-		$resultados= $wpdb->get_results( "SELECT * FROM registros_usuarios WHERE cmp_actv_usr = 1 ORDER BY cmp_nmbr_usr DESC LIMIT ". $offset.", ". $items_per_page, OBJECT, ARRAY_A );
+		$resultados= $wpdb->get_results( "SELECT * FROM registro_usuarios WHERE rg_actv_usr = 1 ORDER BY cmp_nmbr_usr DESC LIMIT ". $offset.", ". $items_per_page, OBJECT, ARRAY_A );
 
 			$i = 0;
 			//$array = json_decode($resultados, true);

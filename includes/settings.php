@@ -21,9 +21,9 @@ if(RG_APP_ENV == 'development'){
 
 ini_set('max_execution_time', 300);
 
-define('RG_EDIT_SERV', $_SERVER['DOCUMENT_ROOT']."/wp-content/plugins/edicion-de-productos");
-define('RG_EDIT_URL_PS', $_SERVER['HTTP_HOST']."/wp-content/plugins/edicion-de-productos");
-define('RG_EDIT_URL_PB', "/wp-content/plugins/edicion-de-productos");
+define('RG_EDIT_SERV', $_SERVER['DOCUMENT_ROOT']."/wp-content/plugins/registro-usuarios");
+define('RG_EDIT_URL_PS', $_SERVER['HTTP_HOST']."/wp-content/plugins/registro-usuarios");
+define('RG_EDIT_URL_PB', "/wp-content/plugins/registro-usuarios");
 
 define('RG_W_URL', plugins_url('/registro-usuarios/') );
 define('RG_UPLOAD_DIR', RG_EDIT_SERV.'/usuarios/');
@@ -33,10 +33,10 @@ define('RG_USER_IP', $ip);
 
 date_default_timezone_set('America/Bogota');
 $fecha = date("Y"). date("m"). date("d"). date("H"). date("i"). date("s");
-$dia = date("Y").'-'.date("m").'-'.date("d");
-
 define('RG_FECHA', $fecha);
+$dia = date("Y").'-'.date("m").'-'.date("d");
 define('RG_DIA', $dia);
+
 
 
 class RG_Settings{
@@ -106,6 +106,7 @@ class RG_Settings{
 
 		// Agregar accion para crear tabla de usuarios
 		$this->loader->add_action('init', $plugin_functions, 'create_user_table',99);
+		$this->loader->add_action('wp_footer', $plugin_functions, 'functionScripts');
 	}
 
 	/**
@@ -131,13 +132,10 @@ class RG_Settings{
 
 		$plugin_public = new RG_Public( $this->registro() );
 
-		$this->loader->add_action('wp_footer', $plugin_public, 'enqueue_styles');
-		// $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts');
-		// $this->loader->add_action('init', $plugin_public, 'register_shortcodes');
-		// $this->loader->add_action('wp_ajax_handle_picture_upload', $plugin_public, 'handle_picture_upload');
-		// $this->loader->add_action('wp_ajax_nopriv_handle_picture_upload', $plugin_public, 'handle_picture_upload');
-		// $this->loader->add_action('woocommerce_after_add_to_cart_button', $plugin_public, 'button_action', 10, 0);
-
+		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
+		$this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_scripts');
+		$this->loader->add_action('init', $plugin_public, 'register_shortcodes');
+		$this->loader->add_action('wp_footer', $plugin_public, 'register_form');
 
 	}
 

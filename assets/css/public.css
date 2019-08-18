@@ -1,0 +1,31 @@
+.popLayer {z-index: 8;}
+
+#ftoContain {background: #f2f2f2;cursor:pointer;width: 100px;height: 100px;display: block;border-radius: 50%;overflow: hidden;position: relative;}
+#ftoContain i{position: absolute;left: calc(50% - 10px);font-size: 20px;top: calc(50% - 10px);color: #d3d3d3;}
+#ftoContain img{object-fit: cover;}#ftoContain:hover{background: #efefef;}#ftoContain:hover i{text-shadow: 2px 2px 5px #3d3d3d;}
+
+#rg_regis_form{display:none;position:fixed;top:15px;width:90%;left:5%;height:auto;overflow-y:auto;overflow-x:hidden;z-index:9;}
+#rg_regis_form form{z-index:9;position: fixed;width: 80%;height:90vh;left: 10%;padding:15px;box-shadow:2px 2px 5px #000;background:#fff;padding-left:40%;border-radius: 15px;overflow-y: auto;}
+#rg_regis_form form>img{width:47%;height:100%;object-fit:cover;position: absolute;left: 0;top: 0;}
+#rg_regis_form form h3{margin:0;}
+#rg_regis_form form label{display: inline-block;width: calc(50% - 15px);margin: 0 5px;}
+#rg_regis_form form input,#rg_regis_form form select{padding:8px;    width: 100%;}
+
+.bestBtn,input[type="submit"]{border:2px solid #5909fa;background:#9828e9;color:#fff;border-radius:5px;padding:10px 15px;cursor:pointer;margin:5px;}.bestBtn:hover,input[type="submit"]:hover{filter:brightness(120%);}
+.bestBtn[disabled],input[type="submit"][disabled] {opacity: .3;}
+input[type="checkbox"]{display: inline-block;width: auto !important;}
+
+.cm-spinner {height: 150px;width: 150px;border: 3px solid transparent;border-radius: 50%;border-top: 4px solid #f15e41;-webkit-animation: spin 4s linear infinite;animation: spin 4s linear infinite;position: relative;margin:0 auto;top:calc(50% - 150px);}
+.cm-spinner::before,
+.cm-spinner::after {content: "";position: absolute;top: 6px;bottom: 6px;left: 6px;right: 6px;border-radius: 50%;border: 4px solid transparent;}
+.cm-spinner::before {border-top-color:#d8211b;-webkit-animation: 3s spin linear infinite;animation: 3s spin linear infinite;}
+.cm-spinner::after {border-top-color:#0071b9;-webkit-animation: spin 1.5s linear infinite;animation: spin 1.5s linear infinite;}
+
+.confirmation{padding:10px 15px;background:green;color:#fff;font-weight:900;border-radius:10px;}
+@media screen and (max-width:650px){
+	#rg_regis_form form{width:94%;left:3%;padding: 15px !important;height:80vh;border-radius:0;}
+	#rg_regis_form form>img{width:100%;height:auto;object-fit:cover;position: relative;}
+	#rg_regis_form form label{width: 100%;float:none;display:block;}
+	._xvm ._5h0d ._5h0o {margin: 5px !important;}
+	.pluginLoginButton.pluginLoginButtonlarge{width:100% !important;}
+}
