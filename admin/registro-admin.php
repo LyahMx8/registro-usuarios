@@ -37,7 +37,7 @@ class RG_Admin{
 		 * la instancia de esta clase inicia con el método run()
 		 * El Loader puede crear una relacion entre los hooks definidos y las funciones definidas en esta clase
 		 */
-		wp_enqueue_style($this->registro, plugin_dir_path(dirname( __FILE__ )).'assets/css/admin.css', array(), 'all');
+		wp_enqueue_style($this->registro, RG_EDIT_URL_PB.'/assets/css/admin.css', array(), 'all');
 		wp_enqueue_style($this->registro, '/wp-admin/load-styles.php', array(), 'all');
 	}
 
@@ -73,40 +73,43 @@ class RG_Admin{
 
 		global $wpdb;
 	?>
-		<h1>Lista de productos editados</h1>
-		<table id="productos">
-			<tr>
-				<th>id</th>
-				<th>id producto</th>
-				<th>Producto Editado</th>
-				<th>Fecha Subida</th>
-				<th>Tipo</th>
-				<th>Ip Cliente</th>
-			</tr>
+		<h1>Lista de usuarios registrados</h1>
+		<!-- <button type="button" class="bestBtn">Ver usuarios activos</button> -->
+		
+		<section class="UsersList">
 	<?php
 
 		$total_pages_sql = $wpdb->get_var("SELECT COUNT(*) FROM registro_usuarios WHERE rg_actv_usr = 1");
 
-		$resultados= $wpdb->get_results( "SELECT * FROM registro_usuarios WHERE rg_actv_usr = 1 ORDER BY cmp_nmbr_usr DESC LIMIT ". $offset.", ". $items_per_page, OBJECT, ARRAY_A );
+		$resultados= $wpdb->get_results( "SELECT * FROM registro_usuarios WHERE rg_actv_usr = 1 ORDER BY rg_nmbr_usr DESC LIMIT ". $offset.", ". $items_per_page, OBJECT, ARRAY_A );
 
 			$i = 0;
 			//$array = json_decode($resultados, true);
 		foreach ( $resultados as $rows => $ch ) {
 			if($i>1){$i=0;}
 	?>
-			<tr>
-				<td><?php  echo $ch->cmpidimg; ?></td>
-				<td><?php  echo $ch->cmpidprdct; ?></td>
-				<td>
-					<div style="float: left;">
-						<img style="width:100px;height:70px;object-fit: contain;" src="<?php echo $ch->cmpurlimg; ?>">
+			<div class="usrCard" onclick="openAll('usrAll<?= $ch->rg_id_usr; ?>')">
+				<img src="<?= RG_EDIT_URL_PB.'/photos/'.$ch->rg_fto_usr; ?>" alt="<?= $ch->rg_nmbr_usr.' '.$ch->rg_aplld_usr; ?>">
+				<p><?= $ch->rg_nmbr_usr.' '.$ch->rg_aplld_usr; ?></p>
+			</div>
+
+			<section class="popContainer" id="usrAll<?= $ch->rg_id_usr; ?>" style="display:none;">
+				<div class="popLayer" onclick="openAll('usrAll<?= $ch->rg_id_usr; ?>')"></div>
+				<div class="usrAll">
+					<img src="<?= RG_EDIT_URL_PB.'/photos/'.$ch->rg_fto_usr; ?>" alt="<?= $ch->rg_nmbr_usr.' '.$ch->rg_aplld_usr; ?>">
+					<div class="info">
+						<h2><?= $ch->rg_nmbr_usr.' '.$ch->rg_aplld_usr; ?></h2>
+						<p><strong><?= $ch->rg_tipdoc_usr; ?>:</strong> <?= $ch->rg_doc_usr; ?></p>
+						<a target="_blank" rel="noreferrer noopener" href="https://www.ip-tracker.org/locator/ip-lookup.php?ip=<?= $ch->rg_ip_usr; ?>"><?= $ch->rg_ip_usr; ?></a>
+						<hr>
+						<a target="_blank" rel="noreferrer noopener" href="tel:<?= $ch->rg_cel_usr; ?>"><?= $ch->rg_cel_usr; ?></a><br>
+						<a target="_blank" rel="noreferrer noopener" href="mailto:<?= $ch->rg_mail_usr; ?>"><?= $ch->rg_mail_usr; ?></a>
+						<hr>
+						<p><strong>¿Acepta recibir ofertas y promociones?</strong> <?php if($ch->rg_feed_usr == 'on') echo "Si"; else echo "No"; ?></p>
+						<p>Fecha de registro: <?= $ch->rg_fch; ?></p>
 					</div>
-					<a style="margin-top:calc((70px / 2) - 10px)" href="<?php echo $ch->cmpurlimg; ?>" download class="dashicons dashicons-download"></a>
-				</td>
-				<td><?php echo $ch->cmpfechup; ?></td>
-				<td><?php if($i==0){echo 'producto frontal'; }else{ echo 'producto trasero'; } ?></td>
-				<td><?php echo $ch->cmpclntip; ?></td>
-			</tr>
+				</div>
+			</section>
 	<?php
 			$i++;
 		}
@@ -119,7 +122,22 @@ class RG_Admin{
 			'current' => $page
 		));
 	?>
-		</table>
+		</section>
+
+		<script>
+			/**
+			* Abrir o cerrar el modal
+			* @param modal, string: id del modal que se usará 
+			*/
+			function openAll(modal){
+				var modalBox = document.getElementById(modal); 
+				if(modalBox.style.display == "none"){
+					modalBox.style.display = "block";
+				}else{
+					modalBox.style.display = "none";
+				}
+			}
+		</script>
 	<?php
 	}
 

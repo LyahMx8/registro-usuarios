@@ -96,7 +96,7 @@ class RG_Public{
 		<section id="rg_regis_form" style="display:none;">
 			<div class="popLayer" onclick="openModal('rg_regis_form')"></div>
 			<form method="post" enctype="multipart/form-data" id="megaform">
-				<input type="hodden" name="regisForm" value="">
+				<input type="hidden" name="regisForm" value="">
 				<img src="<?= RG_EDIT_URL_PB; ?>/assets/img/teamwork.jpg" alt="Trabajo en equipo">
 				<h3>¡Bienvenido!</h3>
 				<p style="line-height: 18px;">Por favor completa tu registro para que disfrutes de todo el material que tenemos para ti.</p>
