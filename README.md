@@ -1,6 +1,6 @@
 # Plugin de Registro de Usuarios
 
-Registro de Usuarios, es un plugin que le permitirá recolectar información de las personas que visitan su página, para posteriores usos. Podrá descargar y utilizar este registro para posteriores usos que usted desee.
+Registro de Usuarios, es un plugin que le permitirá recolectar información de las personas que visitan su página, para posteriores usos.
 
 ## Getting Started
 
@@ -16,7 +16,7 @@ WordPress instalado, versión superior a 4.7
 
 ## Versiones
 
-Usamos [SemVer](http://semver.org/) para el control de versiones. Para ver otras versiones puede consultar los lanzamientos en [este repositorio](https://github.com/Mx8LIVE/registro-usuarios/tags). 
+Usamos [SemVer](http://semver.org/) para el control de versiones. Para ver otras versiones puede consultar los lanzamientos en [este link](https://github.com/Mx8LIVE/registro-usuarios/tags). 
 
 ## Autor
 

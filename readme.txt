@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
 == Descripción ==
  
-Registro de Usuarios, es un plugin que le permitirá recolectar información de las personas que visitan su página, para posteriores usos. Podrá descargar y utilizar este registro para posteriores usos que usted desee.
+Registro de Usuarios, es un plugin que le permitirá recolectar información de las personas que visitan su página, para posteriores usos.
  
 == Installation ==
 1. Descomprima el paquete `registro-usuarios`.
