@@ -141,4 +141,14 @@ class RG_Admin{
 	<?php
 	}
 
+	function configurar_registros(){ ?>
+		<h1>Configuraciones del plugin</h1><br><br>
+		<div class="shortcode">
+			Ejecuta este shortcode para abrir el modal en cualquier momento <br>
+			<div class="code">
+				[open-modal]
+			</div>	
+		</div>
+	<?php }
+
 }

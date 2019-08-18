@@ -58,7 +58,7 @@ class RG_Public{
 	* @since 0.1.0
 	*/
 	public function register_shortcodes() {
-		add_shortcode('open-modal', array($this, 'button_action'));
+		add_shortcode('open-modal', array($this, 'register_form'));
 	}
 
 	/**
@@ -75,21 +75,11 @@ class RG_Public{
 				// Crear una cookie si es la primera vez que el usuario ingresa a la página
 				// Pruebas: definir ambos estados en 'false'
 				// Producción: Cambiar estado dentro del 'else' a 'true'
+				console.log(getCook('client_ip'));
 				if(!getCook('client_ip')){
-					<?php $cookie = false; ?>
+					<?php $cookie = true; ?>
 					document.cookie = "client_ip=<?php echo RG_USER_IP; ?>";
 				}else{ <?php $cookie = false; ?> }
-			
-				// Obtener los datos que llegan de Facebook al iniciar sesión
-				// No funciona en páginas sin certificado de seguridad
-				// FB.api(
-				// 	'/me',
-				// 	'GET',
-				// 	{"fields":"email,address,first_name,last_name"},
-				// 	function(response) {
-				// 		console.log(response);
-				// 	}
-				// );
 			});
 		</script>
 	<?php if(is_front_page() && $cookie===false): ?>
@@ -164,6 +154,17 @@ class RG_Public{
 				var modalBox = document.getElementById(modal); 
 				if(modalBox.style.display == "none"){
 					modalBox.style.display = "block";
+
+					// Obtener los datos que llegan de Facebook al iniciar sesión
+					// No funciona en páginas sin certificado de seguridad
+					FB.api(
+						'/me',
+						FB.getUserID(),
+						{"fields":"email,address,first_name,last_name"},
+						function(response) {
+							console.log(response);
+						}
+					);
 				}else{
 					modalBox.style.display = "none";
 				}
