@@ -99,20 +99,21 @@ class RG_Admin{
 					<img src="<?= RG_EDIT_URL_PB.'/photos/'.$ch->rg_fto_usr; ?>" alt="<?= $ch->rg_nmbr_usr.' '.$ch->rg_aplld_usr; ?>">
 					<div class="info">
 						<h2><?= $ch->rg_nmbr_usr.' '.$ch->rg_aplld_usr; ?></h2>
-						<p><strong><?= $ch->rg_tipdoc_usr; ?>:</strong> <?= $ch->rg_doc_usr; ?></p>
-						<a target="_blank" rel="noreferrer noopener" href="https://www.ip-tracker.org/locator/ip-lookup.php?ip=<?= $ch->rg_ip_usr; ?>"><?= $ch->rg_ip_usr; ?></a>
+						<p><strong style="text-transform:uppercase;"><?= $ch->rg_tipdoc_usr; ?>:</strong> <?= $ch->rg_doc_usr; ?></p>
+						<a target="_blank" rel="noreferrer noopener" href="https://www.ip-tracker.org/locator/ip-lookup.php?ip=<?= $ch->rg_ip_usr; ?>">IP: <?= $ch->rg_ip_usr; ?></a>
 						<hr>
-						<a target="_blank" rel="noreferrer noopener" href="tel:<?= $ch->rg_cel_usr; ?>"><?= $ch->rg_cel_usr; ?></a><br>
-						<a target="_blank" rel="noreferrer noopener" href="mailto:<?= $ch->rg_mail_usr; ?>"><?= $ch->rg_mail_usr; ?></a>
+						<a target="_blank" rel="noreferrer noopener" href="tel:<?= $ch->rg_cel_usr; ?>">Celular: <?= $ch->rg_cel_usr; ?></a><br>
+						<a target="_blank" rel="noreferrer noopener" href="mailto:<?= $ch->rg_mail_usr; ?>">Email: <?= $ch->rg_mail_usr; ?></a>
 						<hr>
 						<p><strong>¿Acepta recibir ofertas y promociones?</strong> <?php if($ch->rg_feed_usr == 'on') echo "Si"; else echo "No"; ?></p>
 						<p>Fecha de registro: <?= $ch->rg_fch; ?></p>
 					</div>
 				</div>
 			</section>
+	<?php $i++;
+		} ?>
+			<br style="clear:left;"><br>
 	<?php
-			$i++;
-		}
 		echo paginate_links( array(
 			'base' => add_query_arg( 'cpage', '%#%' ),
 			'format' => '',

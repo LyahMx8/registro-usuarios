@@ -61,6 +61,10 @@ class RG_Public{
 		add_shortcode('open-modal', array($this, 'register_form'));
 	}
 
+	public function modalBtn(){ ?>
+
+	<?php }
+
 	/**
 	* Método que ejecuta el formulario de registro
 	*
