@@ -10,7 +10,7 @@
 #rg_regis_form form>img{width:47%;height:100%;object-fit:cover;position: absolute;left: 0;top: 0;}
 #rg_regis_form form h3{margin:0;}
 #rg_regis_form form label{display: inline-block;width: calc(50% - 15px);margin: 0 5px;}
-#rg_regis_form form input,#rg_regis_form form select{padding:8px;    width: 100%;}
+#rg_regis_form form input,#rg_regis_form form select{padding:8px;width: 100%;}
 
 .bestBtn,input[type="submit"]{border:2px solid #5909fa;background:#9828e9;color:#fff;border-radius:5px;padding:10px 15px;cursor:pointer;margin:5px;}.bestBtn:hover,input[type="submit"]:hover{filter:brightness(120%);}
 .bestBtn[disabled],input[type="submit"][disabled] {opacity: .3;}

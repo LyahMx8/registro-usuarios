@@ -3,8 +3,6 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/wp-load.php';
 include_once  plugin_dir_path( dirname( __FILE__ ) ).'includes/settings.php';
 
-print_r($_FILES);
-print_r($_POST);
 if(isset($_POST['regisForm'])):
 	$tipdoc = $_POST['tipdoc'];
 	$doc = $_POST['doc'];
@@ -15,13 +13,13 @@ if(isset($_POST['regisForm'])):
 	$fto = $_FILES['fto'];
 	$feed = $_POST['feed'];
 
-	if($_FILES['fto']['tmp_name']){
-		echo 'Error';
-		return false;
+	if($_FILES['fto']['tmp_name'] == ''){
+		echo 'Error1';
+		exit;
 	}
 
 	$nombre_imagen = RG_FECHA.$_FILES['fto']['name'];
-	$tipo_imagen = $_FILES['fto']['type'];	
+	$tipo_imagen = $_FILES['fto']['type'];
 	$original = $_FILES['fto']['tmp_name'];
 	$maxAncho = 800; $maxAlto = 1300;
 	if($tipo_imagen == 'image/png'){

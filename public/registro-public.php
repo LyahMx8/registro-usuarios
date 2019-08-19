@@ -185,18 +185,7 @@ class RG_Public{
 
 		<script>
 			jQuery("#megaform").submit(function(e) {
-				e.preventDefault(); 
-				console.log(e);
-				// var formData = {
-				// 	'regisForm':'',
-				// 	'tipdoc':jQuery('select[name=tipdoc]').val(),
-				// 	'doc':jQuery('input[name=doc]').val(),
-				// 	'nmbr':jQuery('input[name=nmbr]').val(),
-				// 	'aplld':jQuery('input[name=aplld]').val(),
-				// 	'cel':jQuery('input[name=cel]').val(),
-				// 	'mail':jQuery('input[name=mail]').val(),
-				// 	'feed':jQuery('input[name=feed]').val()
-				// }
+				e.preventDefault();
 				var formData = new FormData(this);
 
 				jQuery.ajax({
@@ -204,7 +193,7 @@ class RG_Public{
 					type: 'POST',
 					data: formData,
 					processData: false,
-contentType: false,
+					contentType: false,
 					beforeSend: function(data){
 						console.log("Datos de envío");
 						console.log(data);
