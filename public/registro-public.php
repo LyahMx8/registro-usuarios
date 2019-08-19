@@ -61,6 +61,9 @@ class RG_Public{
 		add_shortcode('open-modal', array($this, 'register_form'));
 	}
 
+	/**
+	* Función pendiente - Es necesario mostrar un botón como shortcode que despliegue el modal
+	*/
 	public function modalBtn(){ ?>
 
 	<?php }

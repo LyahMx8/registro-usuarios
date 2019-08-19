@@ -28,4 +28,4 @@ Este proyecto se rige bajo GPLv2 - ver [LICENSE.md](LICENSE.md) para más detall
 
 ## Agradecimientos
 
-* A la Wunderman Thompson, por permitirme ser parte de su equipo
+* A Wunderman Thompson, por permitirme ser parte de su equipo
