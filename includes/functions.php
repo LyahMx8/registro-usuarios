@@ -39,27 +39,26 @@ class RG_Functions{
 		$charset_collate = $wpdb->get_charset_collate();
 
 		$sql = "CREATE TABLE IF NOT EXISTS registro_usuarios (
-			rg_id_usr int(10) NOT NULL AUTO_INCREMENT,
-			rg_ip_usr varchar(20) NOT NULL,
-			rg_tipdoc_usr varchar(10) NOT NULL,
-			rg_doc_usr varchar(10) NOT NULL,
-			rg_nmbr_usr varchar(30) NOT NULL,
-			rg_aplld_usr varchar(30) NOT NULL,
-			rg_cel_usr varchar(10) NOT NULL,
-			rg_mail_usr varchar(60) NOT NULL,
-			rg_fto_usr varchar(255) NOT NULL,
-			rg_feed_usr varchar(3) NOT NULL,
-			rg_actv_usr boolean NOT NULL,
-			rg_fch DATETIME NOT NULL,
-			PRIMARY KEY (rg_id_usr)
-		) $charset_collate;
-		INSERT INTO `registro_usuarios` 
-			(`rg_id_usr`, `rg_ip_usr`, `rg_tipdoc_usr`, `rg_doc_usr`, `rg_nmbr_usr`, `rg_aplld_usr`, `rg_cel_usr`, `rg_mail_usr`, `rg_fto_usr`, `rg_feed_usr`, `rg_actv_usr`, `rg_fch`) VALUES
-			(1, '181.54.156.243', 'cc', '321323', 'Camilo', 'Saenz', '321654654', 'moquitos@mocos.co', '20190818201607P1060384.jpg', 'on', 1, '2019-08-18 20:16:07'),
-			(2, '181.54.156.243', 'nit', '514313', 'Mario', 'Domingo', '32165464', 'mariano@gmail.co', '20190818200004P_20171208_233448.jpg', 'on', 1, '2019-08-18 20:00:04'),
-			(3, '181.54.156.243', 'ti', '1000617633', 'Yimmy', 'Motta', '321654654', 'yimmy@yo.co', '20190818195409trollHollow.jpg', 'on', 1, '2019-08-18 19:54:09');
-
-";		
+				rg_id_usr int(10) NOT NULL AUTO_INCREMENT,
+				rg_ip_usr varchar(20) NOT NULL,
+				rg_tipdoc_usr varchar(10) NOT NULL,
+				rg_doc_usr varchar(10) NOT NULL,
+				rg_nmbr_usr varchar(30) NOT NULL,
+				rg_aplld_usr varchar(30) NOT NULL,
+				rg_cel_usr varchar(10) NOT NULL,
+				rg_mail_usr varchar(60) NOT NULL,
+				rg_fto_usr varchar(255) NOT NULL,
+				rg_feed_usr varchar(3) NOT NULL,
+				rg_actv_usr boolean NOT NULL,
+				rg_fch DATETIME NOT NULL,
+				PRIMARY KEY (rg_id_usr)
+			) $charset_collate;
+			-- INSERT INTO `registro_usuarios` 
+			-- 	(`rg_id_usr`, `rg_ip_usr`, `rg_tipdoc_usr`, `rg_doc_usr`, `rg_nmbr_usr`, `rg_aplld_usr`, `rg_cel_usr`, `rg_mail_usr`, `rg_fto_usr`, `rg_feed_usr`, `rg_actv_usr`, `rg_fch`) VALUES
+			-- 	(1, '181.54.156.243', 'cc', '321323', 'Camilo', 'Saenz', '321654654', 'moquitos@mocos.co', '20190818201607P1060384.jpg', 'on', 1, '2019-08-18 20:16:07'),
+			-- 	(2, '181.54.156.243', 'nit', '514313', 'Mario', 'Domingo', '32165464', 'mariano@gmail.co', '20190818200004P_20171208_233448.jpg', 'on', 1, '2019-08-18 20:00:04'),
+			-- 	(3, '181.54.156.243', 'ti', '1000617633', 'Yimmy', 'Motta', '321654654', 'yimmy@yo.co', '20190818195409trollHollow.jpg', 'on', 1, '2019-08-18 19:54:09');
+		";		
 
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 		dbDelta( $sql );				
