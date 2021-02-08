@@ -1,5 +1,5 @@
 === Plugin de Registro de Usuarios ===
-Contributors: Yimmy Motta (Mx8live)
+Contributors: Lyah Motta (Mx8live)
 Tags: Registro, Usuarios, Register, Data recollector, Facebook login
 Requires at least: 4.7
 Tested up to: 5.1
