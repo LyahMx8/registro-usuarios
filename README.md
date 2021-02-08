@@ -20,12 +20,9 @@ Usamos [SemVer](http://semver.org/) para el control de versiones. Para ver otras
 
 ## Autor
 
-* **Yimmy Motta** 
+* **Lyah Motta** 
 
 ## Licencia
 
 Este proyecto se rige bajo GPLv2 - ver [LICENSE.md](LICENSE.md) para más detalles
 
-## Agradecimientos
-
-* A Wunderman Thompson, por permitirme ser parte de su equipo
